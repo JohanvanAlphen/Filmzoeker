@@ -1,51 +1,35 @@
-//Opdracht Deel A
-// zet de functie om naar een arrow functie
-// const ikRockArrowFunctions = function () {
-//     console.log("Joe, ik rock de arrow functions!");
-// };
+const array = [
+    { name: "N. Armstrong", profession: "spacecowboy", age: 89 },
+    { name: "H. de Haan", profession: "kippen hypnotiseur", age: 59 },
+    { name: "A. Curry", profession: "kikvorsman", age: 32 },
+    { name: "F. Vonk", profession: "slangenmelker", age: 36 },
+    { name: "B. Bunny", profession: "konijnen uitlaatservice", age: 27 },
+    { name: "Dr.Evil", profession: "digital overlord", age: 56 }
+];
 
-const ikRockArrowFunctions2 = () => console.log("Joe, ik rock de arrow functions!")
+//Dit laat alle informatie zien
+// for (let person of array) {
+//     console.log(person)
+// }
 
-// Opdracht B
-// const fivePlusSeven = function () {
-//     return 5 + 7
-//   };
+// Dit laat naam zien + voorgaande tekst
+// for (let person of array) {
+//     console.log("Zijn naam is", [person.name])
+// }
 
-const fivePlusSeven = () => 5 + 7
+// Dit laat geboortedatum zien
+// for (let person of array) {
+//     console.log(2021 - person.age)
+// }
 
-// Opdracht C
-const myFunction = (a, b) => a + b
+// Dit laat naam + 'tekst' + beroep zien
+// for (let person of array) {
+//     console.log([person.name], " is een ", [person.profession])
+// }
 
-// Opdracht D
-const addFive = a => a + 5
+// If statement voor alle personen > 50 jaar
+for (let person of array) {
+    if (person.age >= 50)
+        console.log([person.name], [person.age])
 
-// Opdracht E
-createObject => ({ greeting: "hoi" })
-
-function sum(a, b) {
-    return a + b
 }
-// Arrowfunction:
-
-let sum2 = (a, b) => a + b
-
-
-function isPositive(number) {
-    return number >= 0
-}
-// Arrowfunction:
-
-let isPositive2 = number => number >= 0
-
-
-function randomNumber() {
-    return Math.random
-}
-// Arrowfunction:
-let randomNumber2 = () => Math.random
-
-document.addEventListener('click', function () {
-    console.log('Click')
-})
-// Arrowfunctions:
-document.addEventListener('click', () => console.log('Click'))
