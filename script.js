@@ -1,35 +1,49 @@
-const array = [
-    { name: "N. Armstrong", profession: "spacecowboy", age: 89 },
-    { name: "H. de Haan", profession: "kippen hypnotiseur", age: 59 },
-    { name: "A. Curry", profession: "kikvorsman", age: 32 },
-    { name: "F. Vonk", profession: "slangenmelker", age: 36 },
-    { name: "B. Bunny", profession: "konijnen uitlaatservice", age: 27 },
-    { name: "Dr.Evil", profession: "digital overlord", age: 56 }
-];
+// Deel 1; Elementen toevoegen
 
-//Dit laat alle informatie zien
-// for (let person of array) {
-//     console.log(person)
-// }
+const bigFiveList = document.querySelector(".big-five-list");
+const spottedList = document.querySelector(".spotted-animals-list");
 
-// Dit laat naam zien + voorgaande tekst
-// for (let person of array) {
-//     console.log("Zijn naam is", [person.name])
-// }
+bigFiveList.addEventListener("click", alertText,);
 
-// Dit laat geboortedatum zien
-// for (let person of array) {
-//     console.log(2021 - person.age)
-// }
+function alertText(e) {
+    if (e.target !== e.currenTarget) {
+        const clickedItem = e.target.id;
+        alert("You have seen a " + clickedItem);
+        const newListItem = document.createElement("li");
+        newListItem.appendChild(document.createTextNode(clickedItem));
+        const list = document.getElementById("spotted-animals-list");
+        list.appendChild(newListItem).className = "spotted-animals-list-item";
+    };
+};
 
-// Dit laat naam + 'tekst' + beroep zien
-// for (let person of array) {
-//     console.log([person.name], " is een ", [person.profession])
-// }
+// Deel 2; 1 element verwijderen 
 
-// If statement voor alle personen > 50 jaar
-for (let person of array) {
-    if (person.age >= 50)
-        console.log([person.name], [person.age])
+const deleteFirstItem = document.getElementById("remove-first-item-button");
 
+deleteFirstItem.addEventListener("click", removeFirstItem);
+
+function removeFirstItem() {
+
+    const firstItem = document.getElementById("spotted-animals-list");
+
+    const firstLi = firstItem.getElementsByTagName("li")[0];
+    firstItem.removeChild(firstLi);
+    console.log(firstItem);
+
+    // Alternatief:
+    // const firstItem = document.getElementById("spotted-animals-list");
+    // firstItem.removeChild(firstItem.childNodes[0]);
+}
+
+// Deel 3; Meerdere element verwijderen uit de DOM
+
+const deleteAllItems = document.getElementById("remove-all-button");
+
+deleteAllItems.addEventListener("click", deleteAll);
+
+function deleteAll() {
+    const spottedAnimalList = document.getElementById("spotted-animals-list");
+    spottedAnimalList.querySelectorAll("*").forEach(n => n.remove());
+    // Alternatief:
+    // spottedAnimalList.innerHTML = "";
 }
