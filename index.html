@@ -2,44 +2,60 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>List of Animals</title>
-    <script defer type="text/javascript" src="script.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/styles.css">
+        <script defer src="movies.js"></script>
+        <script defer src="script.js"></script>
+        <title>Movie Database</title>
 </head>
 
 <body>
-    <div>
-        <h1>The Big Five</h1>
-        <ul class="big-five-list">
-            <li class="big-five-list-item">
-                <button id="Lion" class="big-five-button">Lion</button>
-            </li>
-            <li class="big-five-list-item">
-                <button id="Leopard" class="big-five-button">Leopard</button>
-            </li>
-            <li class="big-five-list-item">
-                <button id="Elephant" class="big-five-button">Elephant</button>
-            </li>
-            <li class="big-five-list-item">
-                <button id="Rhino" class="big-five-button">Rhino</button>
-            </li>
-            <li class="big-five-list-item">
-                <button id="Buffalo" class="big-five-button">Buffalo</button>
-            </li>
-        </ul>
-
-        <h1>Animals spotted:</h1>
-        <ul id="spotted-animals-list">
-            <li class="spotted-animals-list-item">Duck</li>
-        </ul>
-
-        <button id="remove-first-item-button">Remove the first</button>
-        <button id="remove-all-button">
-            Remove all animals from the spotted list
-        </button>
-    </div>
+        <div class="container">
+                <header>
+                        <h1>Filmzoeker</h1>
+                </header>
+                <nav>
+                        <div class="container__radio">
+                                <input type="radio" id="allMovies" name="film-filter" checked><label
+                                        for="allMovies">Alle
+                                        Films</label>
+                        </div>
+                        <div class="container__radio">
+                                <input type="radio" id="newestMovies" name="film-filter">
+                                <label for="newestMovies">Nieuwste Films</label>
+                        </div>
+                        <div class="container__radio">
+                                <input type="radio" id="Avengers" name="film-filter">
+                                <label for="Avengers">Avengers</label>
+                        </div>
+                        <div class="container__radio">
+                                <input type="radio" id="Batman" name="film-filter">
+                                <label for="Batman">Batman</label>
+                        </div>
+                        <div class="container__radio">
+                                <input type="radio" id="Princess" name="film-filter">
+                                <label for="Princess">Princess</label>
+                        </div>
+                        <div class="container__radio">
+                                <input type="radio" id="X-Men" name="film-filter">
+                                <label for="X-Men">X-Men</label>
+                        </div>
+                </nav>
+                <div class="searchbar">
+                        <input class="searchbar__input" id="searchbar" type="text" placeholder="Search..."
+                                name="search">
+                        <input class="searchbar__reset" type="reset" id="reset" name="reset" value="Clear search">
+                </div>
+                <main class="main">
+                        <ul class="main__list" id="movie-list"></ul>
+                </main>
+                <footer>
+                        <div class="footer">
+                                <p>Copyright © 2021 JoMoDaKe media</p>
+                        </div>
+                </footer>
+        </div>
 </body>
 
 </html>
